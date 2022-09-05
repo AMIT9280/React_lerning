@@ -1,23 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/Header';
+import Footer from './components/Footer';
+import { Content } from './components/Content';
+import { Employee } from './crud/Employee';
+import { FormDemo } from './crud/FormDemo';
+import { EmployeeRegistration } from './crud/EmployeeRegistration';
+import { StudentsRegistration } from './forms/StudentsRegistration';
+import { RapidApi } from './api/RapidApi';
+import { Navbar } from './components/Navbar';
+import { AboutUs } from './components/AboutUs';
+import { Blog } from './components/Blog';
+import { ContactUs } from './components/ContactUs';
+import { Route, Routes } from 'react-router-dom';
+import {   ContactDetails } from './components/ContactDetails';
+import { AddUser } from './E-Society/AddUser';
+import { ViewUser } from './E-Society/ViewUser';
+import { UpdateUser } from './E-Society/UpdateUser';
+import { FormValid } from './Task/FormValid';
+import { Login } from './components/Login';
+import { Head } from './TutorialTask/Head';
 
 function App() {
+  var headTitle = 'Royal TechnoSoft Pvt. ltd'
+  var title = 'Students Details'
+  var Students = {
+    name: 'Amit Thakkar',
+    rollNo: '35'
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {/* <Header Title={headTitle} /> */}
+      {/* <StudentsRegistration/> */}
+      {/* <Employee /> */}
+      {/* <Footer /> */}
+     {/* <RapidApi/> */}
+      {/* <Navbar /> */}
+      {/* <FormValid/> */}
+      {/* <Routes>
+        <Route path='/aboutUs' element={<AboutUs />} />
+        <Route path='/ContactUs' element={<ContactUs/>}/>
+        <Route path='/Blog' element={<Blog/>}/>
+        <Route path='/ContactDetails/:id/:name' element={<ContactDetails/>}/>
+        <Route path='/AddUser' element={<AddUser/>}/>
+        <Route path='/GetUser' element={<ViewUser/>}/>
+        <Route path='/updateUser/:_id' element={<UpdateUser/>}/>
+        <Route path='/login' element={<Login/>}/>
+      </Routes> */}
+    <Head/>
     </div>
   );
 }
