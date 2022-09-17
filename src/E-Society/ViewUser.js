@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from 'react-toastify';
 export const ViewUser = () => {
-
+  const navigate = useNavigate();
     useEffect(( ) => {
       
     getAllUsers();
@@ -16,7 +16,7 @@ export const ViewUser = () => {
 
     const getAllUsers = async(data) =>{
          
-        await axios.get("http://localhost:8080/user").then(res=>{
+        await axios.get("https://healthy-me-rest-api.herokuapp.com/users").then(res=>{
          
       
         setUsers(res.data.data);
@@ -61,7 +61,7 @@ export const ViewUser = () => {
   return (
     <div>
         {
-             localStorage.getItem("uid") ?
+             localStorage.getItem("Name") ?
       <>
     
          <ToastContainer
@@ -118,7 +118,7 @@ export const ViewUser = () => {
 </table>
 
 </>
-:<h2>err</h2>}
+:navigate("/log")}
     </div>
   )
 }

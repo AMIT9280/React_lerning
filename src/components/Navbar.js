@@ -1,9 +1,10 @@
-import axios from 'axios'
+ 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export const Navbar = () => {  
-  const [uName, setUname] = useState(JSON.parse(localStorage.getItem("uName")))
+  const [uName, setUname] = useState(localStorage.getItem("Name"))
+  const [uEmail, setEmail] = useState(localStorage.getItem("Email"))
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">E-Society</a>
@@ -31,16 +32,22 @@ export const Navbar = () => {
         <li class="nav-item">
           <Link class="nav-link" to="/GetUser">ViewUser</Link>
         </li>
-        <li class="nav-item">
+        {/* <li class="nav-item">
           <Link class="nav-link" to="/login">Login</Link>
-        </li>
+        </li> */}
         <br/> 
         <li class="nav-item">
-          <h3 class="nav-link"> Welcome {uName}</h3>
+          <Link class="nav-link" to="/log">User Login</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/Logout">Logout</Link>
         </li>
       </ul>
-      
+     
     </div>
+   { uName ?
+    <font color="red" size="3"> Welcome {uName} Email {uEmail} </font>
+   :''} 
   </nav>
   )
 }

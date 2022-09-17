@@ -8,7 +8,7 @@ export const Login = () => {
     const login = async()=>{
 
          axios.get("http://localhost:8080/user").then(res=>{
-            console.log(res.data.data);
+                console.log(res.data.data);
                 localStorage.setItem("uName",JSON.stringify(res.data.data[0].firstName))
                  toast.success(res.data.msg, {
                     position: "top-right",

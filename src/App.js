@@ -20,6 +20,11 @@ import { UpdateUser } from './E-Society/UpdateUser';
 import { FormValid } from './Task/FormValid';
 import { Login } from './components/Login';
 import { Head } from './TutorialTask/Head';
+import { Json } from './contextDemo/Json';
+ 
+import { UserLogin } from './Task/UserLogin';
+import { Logout } from './Task/Logout';
+ 
 
 function App() {
   var headTitle = 'Royal TechnoSoft Pvt. ltd'
@@ -36,9 +41,9 @@ function App() {
       {/* <Employee /> */}
       {/* <Footer /> */}
      {/* <RapidApi/> */}
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <FormValid/> */}
-      {/* <Routes>
+      <Routes>
         <Route path='/aboutUs' element={<AboutUs />} />
         <Route path='/ContactUs' element={<ContactUs/>}/>
         <Route path='/Blog' element={<Blog/>}/>
@@ -47,8 +52,12 @@ function App() {
         <Route path='/GetUser' element={<ViewUser/>}/>
         <Route path='/updateUser/:_id' element={<UpdateUser/>}/>
         <Route path='/login' element={<Login/>}/>
-      </Routes> */}
-    <Head/>
+        <Route path='/log' element={<UserLogin/>}/>
+        <Route path='/Logout' element={<Logout/>}/>
+      </Routes>
+    {/* <Head/> */}
+   
+   {/* <Json/> */}
     </div>
   );
 }
